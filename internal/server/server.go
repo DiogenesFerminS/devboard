@@ -28,3 +28,7 @@ func New(addr string) *Server {
 		mux:        mux,
 	}
 }
+
+func (server *Server) Start() error {
+	return server.httpServer.ListenAndServe()
+}
